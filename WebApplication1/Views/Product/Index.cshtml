@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<table>
+    <tr>
+        <th>Mã Sản Phẩm</th>
+        <th>Tên Sản Phâm</th>
+        <th></th>
+    </tr>
+
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>@p.ProductID</td>
+            <td>@p.ProductName</td>
+            <td>
+                @Html.ActionLink("Xem chi tiết","Details", new {id = p.ProductID})
+                @Html.ActionLink("Sửa", "Edit", new { id = p.ProductID})
+                @Html.ActionLink("Xoá", "Delete", new { id = p.ProductID})
+            </td>
+        </tr>
+    }
+</table>
+@Html.ActionLink("Thêm mới","Create")

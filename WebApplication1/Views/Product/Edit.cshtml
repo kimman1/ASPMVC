@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+@using (Html.BeginForm())
+{
+    <div>Mã SP : @Model.ProductID</div>
+    <div>Tên SP: @Html.TextBox("TenSP", null, new {@PlaceHolder = @Html.Encode(Model.ProductName) } )</div>
+    <div><input type="submit" value="Save" /></div>
+}
+

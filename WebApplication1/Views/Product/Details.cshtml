@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+@foreach (var p in Model)
+{
+    <div>Mã SP: @p.ProductID</div>
+    <div>Tên SP: @p.ProductName</div>
+    <div>Giá : @p.UnitPrice</div>
+}
+@Html.ActionLink("Quay lại SP", "Index");
+
+
+
